@@ -1,0 +1,109 @@
+<html>
+<!--
+    ripped from: https://codepen.io/keithclark/pen/WNgRMQ
+    and mutated
+-->
+
+<head>
+
+    <style>
+        body,
+        html,
+        .wrap {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body {
+            -webkit-filter: contrast(15);
+            filter: contrast(15);
+            background: black;
+        }
+
+        .wrap {
+            background: inherit;
+            animation: 2s spin ease-in-out infinite;
+        }
+
+        .meta:before,
+        .meta:after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            margin: -50px;
+            background: rgba(255, 130, 145, .95);
+            border-radius: 50%;
+            -webkit-filter: blur(25px);
+            filter: blur(25px);
+            animation: move 7s infinite alternate ease-in-out;
+
+        }
+
+        .meta:before {
+            animation-duration: 11.3s;
+            animation-delay: -3.3s;
+        }
+
+        .meta:nth-child(2):before {
+            animation-duration: 5.7s;
+            animation-delay: -2.7s;
+        }
+
+        .meta:nth-child(2):after {
+            animation-duration: 3.7s;
+            animation-delay: -5.32s;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0%, 100%);
+            }
+
+            15% {
+                transform: translate(-120%, 160%);
+            }
+
+            30% {
+                transform: translate(100%, -80%);
+            }
+
+            40% {
+                transform: translate(-140%, 0%);
+            }
+
+            60% {
+                transform: translate(40%, -80%);
+            }
+
+            80% {
+                transform: translate(-160%, -20%);
+            }
+
+            100% {
+                transform: translate(40%, 60%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="meta"></div>
+        <div class="meta"></div>
+        <div class="meta"></div>
+        <div class="meta"></div>
+    </div>
+</body>
+
+</html>
